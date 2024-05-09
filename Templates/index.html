@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket Reservation</title>
+</head>
+<body>
+    <h1>Available Bus Routes</h1>
+    <ul>
+        {% for route in routes %}
+            <li>
+                <a href="/book_ticket/{{ route.id }}">{{ route.origin }} to {{ route.destination }} (Departure: {{ route.departure_time }})</a>
+                - Price: ${{ route.price }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
